@@ -52,12 +52,24 @@ public class LinkedList {
         System.out.println();
     }
 
-    //remove head
+    //remove first
     public static Node removeHead(Node head) {
         if(head == null) {
             return null;
         }
         head = head.next;
+        return head;
+    }
+    //remove last
+    public static Node removeLast(Node head) {
+        if(head == null || head.next == null) {
+            return null;
+        }
+        Node temp = head;
+        while(temp.next.next != null) {
+            temp = temp.next;
+        }
+        temp.next = null;
         return head;
     }
 
